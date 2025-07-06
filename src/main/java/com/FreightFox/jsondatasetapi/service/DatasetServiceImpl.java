@@ -43,12 +43,11 @@ public class DatasetServiceImpl implements DatasetService {
     @Override
     public QueryResponse queryDataset(String datasetName, Optional<String> groupByOpt, Optional<String> sortByOpt, Optional<String> orderOpt) {
     	
-    	List<DatasetRecord> record = repository.findByDatasetName(datasetName);
-    	if (record.isEmpty()) {
-    	    throw new CustomException("Empty dataset: " + datasetName, HttpStatus.NOT_FOUND);
+    	List<DatasetRecord> records = repository.findByDatasetName(datasetName);
+    	if (records.isEmpty()) {
+    	    throw new CustomException("Dataset '" + datasetName + "' not found", HttpStatus.NOT_FOUND);
     	}
 
-        List<DatasetRecord> records = repository.findByDatasetName(datasetName);
         List<JsonNode> jsonList = records.stream()
                 .map(r -> {
                     try {
@@ -78,6 +77,6 @@ public class DatasetServiceImpl implements DatasetService {
             return QueryResponse.sorted(sorted);
         }
 
-        return QueryResponse.sorted(jsonList); // default case
+        return QueryResponse.sorted(jsonList);
     }
 }
