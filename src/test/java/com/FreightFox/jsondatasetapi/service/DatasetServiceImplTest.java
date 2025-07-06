@@ -132,6 +132,6 @@ public class DatasetServiceImplTest {
         CustomException ex = assertThrows(CustomException.class, () ->
                 service.queryDataset("empty_dataset", Optional.empty(), Optional.empty(), Optional.empty()));
 
-        assertEquals("Empty dataset: empty_dataset", ex.getMessage());
+        assertEquals("Dataset 'empty_dataset' not found", ex.getMessage());
     }
 }
