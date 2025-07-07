@@ -127,11 +127,11 @@ public class DatasetServiceImplTest {
 
     @Test
     void testQueryDataset_emptyDataset_throwsException() {
-        when(repository.findByDatasetName("empty_dataset")).thenReturn(Collections.emptyList());
+        when(repository.findByDatasetName("no_dataset")).thenReturn(Collections.emptyList());
 
         CustomException ex = assertThrows(CustomException.class, () ->
-                service.queryDataset("empty_dataset", Optional.empty(), Optional.empty(), Optional.empty()));
+                service.queryDataset("no_dataset", Optional.empty(), Optional.empty(), Optional.empty()));
 
-        assertEquals("Dataset 'empty_dataset' not found", ex.getMessage());
+        assertEquals("Dataset 'no_dataset' not found", ex.getMessage());
     }
 }
