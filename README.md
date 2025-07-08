@@ -93,7 +93,7 @@ GET http://localhost:8080/api/dataset/sa/query?groupBy=department
 - **Example:**
 
 ```bash
-GET http://localhost:8080/api/dataset/employee_dataset/query?sortBy=age&order=desc
+GET http://localhost:8080/api/dataset/sa/query?sortBy=age&order=desc
 ```
 
 - **Response:**
