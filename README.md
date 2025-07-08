@@ -17,7 +17,7 @@ This is a Spring Boot application that allows users to insert, group, and sort d
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Pranjal-Singh44/JSON_GroupBy_SortBy
    cd <your-repo-folder>
    ```
 
@@ -40,6 +40,7 @@ This is a Spring Boot application that allows users to insert, group, and sort d
 ### 1. Insert JSON Record
 
 - **URL:** `POST /api/dataset/{datasetName}/record`
+- **datasetName:** sa
 - **Description:** Inserts a single JSON object into the specified dataset.
 - **Request Body (JSON):**
 
@@ -55,7 +56,7 @@ This is a Spring Boot application that allows users to insert, group, and sort d
 - **Example:**
 
 ```bash
-POST http://localhost:8080/api/dataset/employee_dataset/record
+POST http://localhost:8080/api/dataset/sa/record
 ```
 
 ---
@@ -63,11 +64,12 @@ POST http://localhost:8080/api/dataset/employee_dataset/record
 ### 2. Query Dataset with Group By
 
 - **URL:** `GET /api/dataset/{datasetName}/query?groupBy=fieldName`
+- **datasetName:** sa
 - **Description:** Groups records in the dataset by the specified field.
 - **Example:**
 
 ```bash
-GET http://localhost:8080/api/dataset/employee_dataset/query?groupBy=department
+GET http://localhost:8080/api/dataset/sa/query?groupBy=department
 ```
 
 - **Response:**
@@ -86,6 +88,7 @@ GET http://localhost:8080/api/dataset/employee_dataset/query?groupBy=department
 ### 3. Query Dataset with Sort By
 
 - **URL:** `GET /api/dataset/{datasetName}/query?sortBy=fieldName&order=asc|desc`
+- **datasetName:** sa
 - **Description:** Sorts records in the dataset by the specified field in ascending or descending order.
 - **Example:**
 
