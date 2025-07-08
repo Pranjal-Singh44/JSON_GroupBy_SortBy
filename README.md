@@ -17,7 +17,7 @@ This is a Spring Boot application that allows users to insert, group, and sort d
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/Pranjal-Singh44/JSON_GroupBy_SortBy
+   git clone https://github.com/Pranjal-Singh44/JSON_GroupBy_SortBy.git
    cd <your-repo-folder>
    ```
 
